@@ -1,7 +1,8 @@
 "use client";
 
 import { useEffect, useRef, useState } from "react";
-import { Auth, ThemeMinimal } from "@supabase/auth-ui-react";
+import { Auth } from "@supabase/auth-ui-react";
+import { ThemeSupa } from "@supabase/auth-ui-shared";
 import { supabase } from "@/lib/supabaseClient";
 
 const WS_URL = process.env.NEXT_PUBLIC_STREAM_SERVER_URL || "ws://localhost:4000/ws";
@@ -54,7 +55,7 @@ export default function AdminPage() {
       <h1 className="mt-6 text-2xl font-semibold text-zinc-900 dark:text-zinc-100">Admin - Live Stream</h1>
       {!session ? (
         <div className="w-full max-w-md rounded-xl border bg-white p-6 dark:border-zinc-800 dark:bg-zinc-900">
-          <Auth supabaseClient={supabase} appearance={{ theme: ThemeMinimal }} providers={[]} />
+          <Auth supabaseClient={supabase} appearance={{ theme: ThemeSupa }} providers={[]} />
         </div>
       ) : (
         <>
